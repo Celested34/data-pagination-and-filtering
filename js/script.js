@@ -27,13 +27,13 @@ function showPage (list, page) {
    let endIndex = page * 9; 
 
    //create a new variable in order to store the UL elements from index.html 
-   let studentList = document.getElementsByClassName('student-list');
+   let studentList = document.querySelector(".student-list");
 
    //use the innerhtml property and create an empty string 
    studentList.innerHTML = "";
 
    //use a for loop for the list parameter
-   for (i = 0; i < list.length; i++) {
+   for (let i = 0; i < list.length; i++) {
       //the loop needs to be between the first and last index
       if (i >= startIndex && i < endIndex ) {
          //using template literals in order to display the 9 students information
@@ -50,7 +50,7 @@ function showPage (list, page) {
         </li>
           `;
          //use insertAdjacentHTML to show elements in browser 
-         studentList[i].insertAdjacentHTML('beforeend', studentInfo); 
+         studentList.insertAdjacentHTML("beforeend", studentInfo); 
          
       }  
    }
@@ -74,7 +74,7 @@ function addPagination (list) {
    let linkList = document.getElementsByClassName('link-list');
 
    //use the innerHTML property and create an empty string
-   linkList.innerHTML = '';
+   linkList.innerHTML = "";
 
    //create a for loop to check for the buttons  
    for (i = 0; i <= numOfPage; i++) {
