@@ -18,7 +18,7 @@ This function will create and insert/append the elements needed to display a "pa
 */
 
 //create a function with 2 parameters: list and page
-function showPage (list, ) {
+function showPage (list, page) {
 
    //create two variables to store the start index and the end index
    //use the page parameter from the function
