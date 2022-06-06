@@ -71,13 +71,13 @@ function addPagination (list) {
    let numOfPage = Math.ceil(list.length/9);  
 
    //a new variable to store UL elements 
-   let linkList = document.getElementsByClassName('link-list');
+   let linkList = document.querySelector(".link-list");
 
    //use the innerHTML property and create an empty string
    linkList.innerHTML = "";
 
    //create a for loop to check for the buttons  
-   for (i = 0; i <= numOfPage; i++) {
+   for (i = 1; i <= numOfPage; i++) {
 
       //new button 
       let button = `
@@ -90,17 +90,18 @@ function addPagination (list) {
       linkList.insertAdjacentHTML("beforeend", button);
 
       //select the first pagination button 
-      let firstButton = document.querySelector('button')
-      firstButton.className = (active);
-
-      //create ana event listener
-      linkList.addEventListener('click', (e) => {
+      let firstButton = document.querySelector("button")
+      firstButton.className = ("active");
+   
+      //create an event listener
+      linkList.addEventListener("click", (e) => {
 
          //conditional  that checks for tagName
-         if(e.target.tagName === 'BUTTON') {
+         if(e.target.tagName === "BUTTON") {
              
-         //if condition is met use querySelector
-         document.querySelector('active').className = '';
+         //if condition is met use querySelector and update
+         let activeButton = document.querySelector(".active");
+         activeButton.className = "";
 
          //adding the active class to the button that was clicked
          e.target.className = 'active';
