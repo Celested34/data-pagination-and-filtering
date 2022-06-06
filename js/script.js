@@ -99,8 +99,10 @@ function addPagination (list) {
          //conditional  that checks for tagName
          if(e.target.tagName === "BUTTON") {
              
-         //if condition is met use querySelector and update
+         //if condition is met use querySelector and add the class active
          let activeButton = document.querySelector(".active");
+
+         //create and empty string to store the active button
          activeButton.className = "";
 
          //adding the active class to the button that was clicked
